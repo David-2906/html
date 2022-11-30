@@ -9,8 +9,9 @@
 <body>
     <h1>FICHIER PHP</h1>
     <?php
-        echo "Cette fois, mon PHP est <strong>interprété</strong><br>";
+        echo "Cette fois ci, mon PHP est <strong>interprété</strong><br>";
         echo "Le resultat de l'addition est " . (75+7) . "<br>";
     ?>
+    <p>Nouvelle ligne</p>
 </body>
 </html>
