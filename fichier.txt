@@ -1,0 +1,216 @@
+git config user.name ...  (... : informations du compte github lié)
+git config user.email ...  
+
+git commit -m "..."  : Sauvegarde de la version actuelle du projet (... : description de la sauvegarde)
+
+Le caractère * représente n'importe quelle suite de caractères (même aucun caractère)
+Le caractère ? représente 1 caractère (obligatoire)
+
+
+
+------------------------------------------------------------------
+
+STRUCTURE CONDITIONNELLES
+
+SI quelque chose est vrai ALORS je fais quelque chose SINON je fais autre chose
+
+Une condition ne peut avoir que 2 valeurs possibles : vrai ou faux
+
+
+SI il n'est pas 16h ET qu'il fais beau alors on arrête a 16h
+SI il n'est pas 16h OU qu'il fais beau alors on arrête a 16h
+
+
+SI a ET b alors c
+SI a OU b alors c
+
+a, b ne peuvent avoir comme valeur que vrai ou faux
+
+a = VRAI b = VRAI => a ET b est VRAI
+a = FAUX b = VRAI => a ET b est FAUX
+a = FAUX b = FAUX => a ET b est FAUX
+a = VRAI b = FAUX => a ET b est FAUX 
+
+ex:
+    cas d'un formulaire de connexion:
+        a correspond à : l'identifiant existe
+        b correspond à : le mot de passe est correct
+
+a=VRAI b=VRAI  => a OU b = VRAI
+a=FAUX b=VRAI  => a OU b = VRAI
+a=FAUX b=FAUX  => a OU b = FAUX
+a=VRAI b=faux  => a OU b = VRAI
+
+a * b équivalent à a ET b, si a et b ne peuvent avoir comme valeur que 0 ou 1
+
+a=1 b=1  => a * b = 1
+a=0 b=1  => a * b = 0
+a=0 b=0  => a * b = 0
+a=1 b=0  => a * b = 0
+
+a + b équivalent à a OU b, si a et b ne peuvent avoir comme valeur que 0 ou 1
+
+a=1 b=1  => a + b = 1
+a=0 b=1  => a + b = 1
+a=0 b=0  => a + b = 0
+a=1 b=0  => a + b = 1
+
+a et (b ou c)
+
+a=VRAI b=VRAI c=VRAI => a * (b + c) = VRAI
+a=VRAI b=VRAI c=FAUX => a * (b + c) = VRAI
+a=VRAI b=FAUX c=VRAI => a * (b + c) = VRAI
+a=VRAI b=FAUX c=FAUX => a * (b + c) = FAUX
+
+a=FAUX b=VRAI c=VRAI => a * (b + c) = FAUX
+a=FAUX b=VRAI c=FAUX => a * (b + c) = FAUX
+a=FAUX b=FAUX c=VRAI => a * (b + c) = FAUX
+a=FAUX b=FAUX c=FAUX => a * (b + c) = FAUX
+
+(a OU b) ET (a OU c)
+
+a=1 b=1 c=1 => (a+b)*(a+c) = 1
+a=1 b=0 c=1 => (a+b)*(a+c) = 1
+a=1 b=1 c=0 => (a+b)*(a+c) = 1
+a=1 b=0 c=0 => (a+b)*(a+c) = 1
+
+a=0 b=1 c=1 => (a+b)*(a+c) = 1
+a=0 b=0 c=1 => (a+b)*(a+c) = 0
+a=0 b=1 c=0 => (a+b)*(a+c) = 0
+a=0 b=0 c=0 => (a+b)*(a+c) = 0
+
+LOGIQUE 
+
+Opérateurs logiques : 
+
+                              						Languages de programmation (PHP, JS)
+ET		AND		* (multiplication)  					&&
+
+OU		OR		+ (addition)		    				||
+
+NON		NOT     inverser une valeur booléenne			 ! 
+
+a 		est une assertion vraie ou fausse
+NON a 	sera vrai si a est faux
+		sera faux si a est vrai
+
+a=VRAI  NON a=FAUX
+a=FAUX  NON a=VRAI
+
+Alarme : 7h
+SI heure == 7 		ALORS sonne 
+SI heure != 7		ALORS ne fait rien
+SI !(heure == 7) 	ALORS ne fait rien
+
+-----------------------
+
+Demande valeur bonjour
+Demande valeur voiture
+demande opérateur
+afficher resultat de l'opération
+
+nombre1 
+nombre2
+
+Affiche nombre1 + nombre2
+Afficher nombre1 - nombre2
+Afficher nombre2 - nombre1
+
+(5 * 7 + 32 - 19) / 12 = 4 
+- déclarer une variable 
+  Types de variables simples ou scalaires :
+  		entier						integer
+        réél (flottant)				 float
+        chaîne de caractères		 string
+        booléen						boolean
+
+    syntaxe : var nomDeLaVariable;
+
+- affecter une variable : Donner une valeure a une variable
+    syntaxe : nomDeLaVariable = 5;
+              nomDeLaVaribale = "ceci est une chaine de caractère";
+                Les string sont délimités par des "" ou des '';
+
+(Back slash s'appelle un caractère d'échappement)
+
+exemple: (5 * 7 + 32 - 19) / 12 
+var nombre;
+nombre = 5 * 7;
+nombre = nombre + 32;
+nombre = nombre - 19;
+nombre = nombre / 12;
+afficher "le resultat de l'opération est " + nombre; // CONCATENATION : coller 2 string
+
+EXERCICE:
+/*
+    1. Declarer 2 variables ( nommées n1 et n2)
+    2. Affecter la valeur 12 à la variable n1
+        et la valeur 7 à la variable n2
+    3. inverser les valeurs des 2 variables (c'est a dire qu'à la fin de l'algorithme, la varibale n1 doit valoir 7 et n2 doit valoir 12)
+*/
+
+1 :
+var n1;
+var n2;
+
+2 :
+n1=12;
+n2=7;
+
+3:
+var n3;
+/* Syntaxe de l'affectation : variable = valeur */
+n3 = n2;  // la valeur de gauche est celle qui reçoit, n3 vaut 7
+n2 = n1;  // n2 vaut 12
+n1 = n3;  // n1 vaut 7
+
+// SI n1 = 12 ALORS "n1 est égal à 12" SINON "n1 est différent de 12"
+
+
+// FONCTIONS
+
+var chaine;
+
+chaine = "C'est le cours de logique";
+afficher " La longueur de la chaine de caractère est " + longueur(chaine);
+
+/* Dans l'exemple précédent, longueur est une fonction qui renvoie la taille d'un string.
+    Le string doit être passé comme argument à la fonction (entre les parenthèses) */
+
+
+si longueur(chaine) > 7 alors
+    afficher "la chaine de caractères est longue";
+sinon 
+    afficher "la chaine de caractères est courte";
+
+OPERATEURS DE COMPARAISON:
+> supérieur
+< inférieur
+>= supèrieur ou egal à
+<= inférieur ou égal à 
+== égalité
+!= différence
+
+var mdp; // cette variable contient le mot de passe tapé par l'utilisateur dans le formulaire
+
+EXERCICE:
+/*
+    Si le mot de passe a une taille comprise entre 10 et 15 caractères, afficher "mot de passe valide"
+    sinon afficher "mot de passe invalide"
+*/
+
+Si longueur($mdp) >= 10 & longueur($mdp) <= 15 
+    afficher "mot de passe valide";
+SINON
+    afficher "mot de passe invalide";
+FINSI
+
+SI longueur(mdp) >= 10 ALORS
+    SI longueur(mdp)<= 15 ALORS
+        Afficher "mot de passe valide";
+    SINON  
+        Afficher " le mot de passe est trop long";
+    FINSI
+SINON
+    afficher "le mot de passe est trop court";
+FINSI
